@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bingo</title>
+		<link rel="stylesheet" href="/stylesheets/style.css">
+	</head>
+	<body onload="newCard()">
+		<div class="bingo-layout">
+			<div class="bingo-title">Let's Bingo!</div>
+			<div class = "wait" id="wait"></div>
+			<div class = "yourTurn" id="yourTurn">your turn</div>
+			<table id="bingotable">
+				<tr>
+					<td id="0" onclick="selectNum('0')">&nbsp;</td>
+					<td id="1" onclick="selectNum('1')">&nbsp;</td>
+					<td id="2" onclick="selectNum('2')">&nbsp;</td>
+					<td id="3" onclick="selectNum('3')">&nbsp;</td>
+					<td id="4" onclick="selectNum('4')">&nbsp;</td>
+				</tr>
+				<tr>
+					<td id="5" onclick="selectNum('5')">&nbsp;</td>
+					<td id="6" onclick="selectNum('6')">&nbsp;</td>
+					<td id="7" onclick="selectNum('7')">&nbsp;</td>
+					<td id="8" onclick="selectNum('8')">&nbsp;</td>
+					<td id="9" onclick="selectNum('9')">&nbsp;</td>
+				</tr>
+				<tr>
+					<td id="10" onclick="selectNum('10')">&nbsp;</td>
+					<td id="11" onclick="selectNum('11')">&nbsp;</td>
+					<td id="free">FREE</td>
+					<td id="12" onclick="selectNum('12')">&nbsp;</td>
+					<td id="13" onclick="selectNum('13')">&nbsp;</td>
+				</tr>
+				<tr>
+					<td id="14" onclick="selectNum('14')">&nbsp;</td>
+					<td id="15" onclick="selectNum('15')">&nbsp;</td>
+					<td id="16" onclick="selectNum('16')">&nbsp;</td>
+					<td id="17" onclick="selectNum('17')">&nbsp;</td>
+					<td id="18" onclick="selectNum('18')">&nbsp;</td>
+				</tr>
+				<tr>
+					<td id="19" onclick="selectNum('19')">&nbsp;</td>
+					<td id="20" onclick="selectNum('20')">&nbsp;</td>
+					<td id="21" onclick="selectNum('21')">&nbsp;</td>
+					<td id="22" onclick="selectNum('22')">&nbsp;</td>
+					<td id="23" onclick="selectNum('23')">&nbsp;</td>
+				</tr>
+			</table>
+			<button class="bingo-btn" id="changecard" onclick="anotherCard()">Change Card</button>
+			<button class="bingo-btn" id="start" onclick="start()">start</button>
+		</div>
+		<div id="window-container">
+			<div id="window-pop">
+				<div class="window-content">
+					<span>You WIN!!!</span>
+				</div>
+			</div>
+		</div>
+		<div id="window-loose">
+			<div id="window-pop">
+				<div class="window-content">
+					<span>You loose</span>
+				</div>
+			</div>
+		</div>
+    <script src="/socket.io/socket.io.js"></script>
+		<script src="/javascripts/bingo.js"></script>
+		<script src="/javascripts/confetti.js"></script>
+	</body>
+</html>
